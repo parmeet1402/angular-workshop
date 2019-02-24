@@ -1,0 +1,45 @@
+<!-- <h1>headline....</h1>
+<h2>{{headlineText}}</h2>
+<div *ngIf="news == null">Loading</div>
+<ul>
+    <li *ngFor="let item of news">
+        <img src={{item.urlToImage}}>
+        {{item.title}}
+        {{item.description}}
+        {{item.author}}
+    </li>
+</ul>
+
+
+ -->
+<h1>Headline</h1>
+ <div class="card-deck">
+        <!-- Card -->
+        <div *ngFor="let item of news">
+
+            <mdb-card>
+                <div class="view overlay waves-light" mdbWavesEffect>
+                    <!-- Card img -->
+                    <mdb-card-img src={{item.urlToImage}} class="headline__img" alt="Card image cap" onerror="this.onerror=null"></mdb-card-img>
+            <a>
+                <div class="mask rgba-white-slight"></div>
+            </a>
+        </div>
+        <!--Card content-->
+        <mdb-card-body>
+            <!--Title-->
+            <mdb-card-title>
+                <h4>{{item.title}}</h4>
+            </mdb-card-title>
+            
+            <!--Text-->
+            <mdb-card-text> 
+                    <div [innerHTML]=item.description></div>
+                    <div>{{item.description}}</div>
+            </mdb-card-text>
+            
+            <a href="#" mdbBtn color="primary" mdbWavesEffect>Button</a>
+          </mdb-card-body>
+        </mdb-card>
+    </div>
+    </div>
